@@ -1,0 +1,79 @@
+.App {
+  /* text-align: center; */
+  margin: 0;
+}
+
+.welcomeScreen {
+  display: inline-flex;
+  /* flex-direction: row;
+  flex-wrap: nowrap; */
+  flex-wrap: wrap;
+  width: 100%;
+  height: -webkit-fill-available;
+}
+
+.leftScreen {
+  /* flex-grow: 1;
+  flex-basis: auto; */
+  flex: 0 1 auto;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.rightScreen {
+  /* flex-grow: 1;
+  flex-basis: auto; */
+  flex: 0 1 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.textWelcome {
+  font-family: 'Righteous', cursive;
+  font-size: 13rem;
+  margin-top: 3rem;
+}
+
+.ContainerCom {
+  background-color: black;
+  width: 100%;
+  display: grid;
+  align-items: center !important;
+  .createCompany {
+    display: grid;
+    // flex-flow: column, wrap;
+    // width: -webkit-fill-available;
+    width: 52rem;
+    height: -webkit-fill-available;
+    color: white;
+    justify-items: center;
+    margin: auto;
+    .md-form {
+      width: inherit;
+    }
+  }
+}
+
+.companyContainer {
+  display: inherit !important;
+  flex-direction: column !important;
+}
+
+.MainContainer {
+  text-align: center;
+  background-color: black;
+  .titleHeader {
+    color: white;
+    font-family: 'Righteous', cursive;
+  }
+  .companyRow {
+    margin-left: 15px;
+    margin-right: 15px;
+    justify-content: center;
+  }
+  .companycard{
+    margin-bottom: 2rem;
+  }
+}

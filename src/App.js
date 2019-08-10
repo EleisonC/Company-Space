@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from 'react-redux';
+import configureStore from './redux/store';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import './App.scss';
+import Dashboard from './components/dashboard/dashboard';
+import CreateNewCompany from './components/createNewCompany/createNewCom'
+import ViewAllCompanies from './components/viewCompanies/viewCompanies';
 
-function App() {
+const App = () => {
+  const store = configureStore();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+    <BrowserRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route exact path="/create-new-company" component={CreateNewCompany} />
+          <Route exact path="/view-companies" component={ViewAllCompanies} />
+        </Switch>
+      </div>
+    </BrowserRouter>
+    </Provider>
   );
-}
+};
 
 export default App;
